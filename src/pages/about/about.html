@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      About
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <input type="text">
+
+  <ion-slides pager>
+    <ion-slide>
+
+      <talks></talks>
+
+
+    </ion-slide>
+
+    <ion-slide>
+      <ion-card>
+        <ion-card-header>New Talk</ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label floating>Talk title</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+
+          <button>Guardar</button>
+          <button ion-button="">Guardar</button>
+
+          <ion-item>
+            <ion-label stacked color="primary">Fecha</ion-label>
+            <ion-datetime></ion-datetime>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+
+  </ion-slides>
+
+</ion-content>
