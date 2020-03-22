@@ -1,18 +1,21 @@
- import { NgModule, ErrorHandler } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
+import {NgModule, ErrorHandler} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
+import {MyApp} from './app.component';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
+import {AboutPage} from '../pages/about/about';
+import {ContactPage} from '../pages/contact/contact';
+import {HomePage} from '../pages/home/home';
+import {TabsPage} from '../pages/tabs/tabs';
 
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import {StatusBar} from '@ionic-native/status-bar';
+import {SplashScreen} from '@ionic-native/splash-screen';
 import {ComponentsModule} from "../components/components.module";
-import { TalksProvider } from '../providers/talks/talks';
- import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {TalksProvider} from '../providers/talks/talks';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {TalksComponent} from '../components/talks/talks';
+import {SuccessPage} from '../pages/success/success';
+import {SuccessPageModule} from '../pages/success/success.module';
 
 @NgModule({
   declarations: [
@@ -20,21 +23,24 @@ import { TalksProvider } from '../providers/talks/talks';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    TalksComponent,
+    SuccessPage
   ],
-    imports: [
-        BrowserModule,
-        IonicModule.forRoot(MyApp),
-        ComponentsModule,
-        HttpClientModule
-    ],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
+
+  ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    SuccessPage
   ],
   providers: [
     StatusBar,
@@ -43,4 +49,5 @@ import { TalksProvider } from '../providers/talks/talks';
     TalksProvider
   ]
 })
-export class AppModule {}
+export class AppModule {
+}

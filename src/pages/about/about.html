@@ -24,15 +24,15 @@
         <ion-card-content>
           <ion-item>
             <ion-label floating>Talk title</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input type="text" #title></ion-input>
           </ion-item>
 
           <button>Guardar</button>
-          <button ion-button="">Guardar</button>
+          <button ion-button (click)="talks2.onSubmit(title.value, date.value)">Guardar</button>
 
           <ion-item>
             <ion-label stacked color="primary">Fecha</ion-label>
-            <ion-datetime></ion-datetime>
+            <ion-datetime #date></ion-datetime>
           </ion-item>
         </ion-card-content>
       </ion-card>

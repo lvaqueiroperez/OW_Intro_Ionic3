@@ -9,9 +9,18 @@ export class TalksProvider {
 
   }
 
+  // NO VA???
+  /*
   getAllTalks() {
     return this.http.get('http://data.agenda.wedeploy.io/talks')
       .map(response => response);
+  }
+*/
+
+  save(title, date) {
+
+    return this.http.post('http://data.agenda.wedeploy.io/talks', {title, date});
+
   }
 
 }
