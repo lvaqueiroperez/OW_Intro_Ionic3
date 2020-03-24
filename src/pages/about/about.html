@@ -8,27 +8,25 @@
 
 <ion-content padding>
 
-  <input type="text">
-
   <ion-slides pager>
     <ion-slide>
-
       <talks></talks>
-
-
     </ion-slide>
 
     <ion-slide>
       <ion-card>
         <ion-card-header>New Talk</ion-card-header>
         <ion-card-content>
+
+          <p style="background: red;" padding>Ejemplo</p>
+
           <ion-item>
             <ion-label floating>Talk title</ion-label>
             <ion-input type="text" #title></ion-input>
           </ion-item>
 
-          <button>Guardar</button>
-          <button ion-button (click)="talks2.onSubmit(title.value, date.value)">Guardar</button>
+
+          <button ion-button (click)="onSubmit(title.value, date.value)">Guardar</button>
 
           <ion-item>
             <ion-label stacked color="primary">Fecha</ion-label>

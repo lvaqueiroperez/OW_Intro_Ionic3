@@ -9,17 +9,21 @@ import {NavController} from 'ionic-angular';
   template: `
     <ion-list inset>
 
-      <p *ngFor="let talk of talks">{{talk.title}}</p>
-      <p>2</p>
+      <p *ngFor="let talk of talks">
+        <ion-icon name="beer"></ion-icon>
+        {{talk.title}}</p>
+
 
     </ion-list>`
 })
+
 export class TalksComponent {
 
   text: string;
   talks;
 
-  constructor(public http: HttpClient, public navCtrl: NavController, private talksProvider: TalksProvider) {
+  // QUITADI EL OBJETO "NavController" DEL CONSTRUCTOR
+  constructor(public http: HttpClient, private talksProvider: TalksProvider) {
     this.getAllTalks()
   }
 
@@ -29,11 +33,6 @@ export class TalksComponent {
         this.talks = result;
       })
 
-  }
-
-
-  onSubmit(title, date) {
-    this.talksProvider.save(title, date).subscribe(x => console.log(x));
   }
 
 

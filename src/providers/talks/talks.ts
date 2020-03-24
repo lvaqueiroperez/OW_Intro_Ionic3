@@ -9,7 +9,7 @@ export class TalksProvider {
 
   }
 
-  // NO VA???
+  // NO VA AQUÍ???
   /*
   getAllTalks() {
     return this.http.get('http://data.agenda.wedeploy.io/talks')
@@ -17,9 +17,10 @@ export class TalksProvider {
   }
 */
 
+  // PARECE QUE SI LE CAMBIAMOS EL ENLACE POR EL QUE USAMOS EN EL "GETALLTALKS" FUNCIONA
   save(title, date) {
 
-    return this.http.post('http://data.agenda.wedeploy.io/talks', {title, date});
+    return this.http.post('http://jsonplaceholder.typicode.com/posts', {title, date});
 
   }
 

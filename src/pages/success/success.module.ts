@@ -1,13 +1,11 @@
-import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
-import { SuccessPage } from './success';
+import {NgModule} from '@angular/core';
+import {IonicPageModule} from 'ionic-angular';
+import {SuccessPage} from './success';
 
+// QUITAMOS LOS IMPORTS PARA QUE NO ENTREN EN CONFLICTO CON LOS DE APP.MODULE???
 @NgModule({
-  declarations: [
-    SuccessPage,
-  ],
-  imports: [
-    IonicPageModule.forChild(SuccessPage),
-  ],
+  declarations: [],
+  imports: [],
 })
-export class SuccessPageModule {}
+export class SuccessPageModule {
+}

@@ -16,6 +16,8 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {TalksComponent} from '../components/talks/talks';
 import {SuccessPage} from '../pages/success/success';
 import {SuccessPageModule} from '../pages/success/success.module';
+import {IonicStorageModule} from "@ionic/storage";
+import {InAppBrowser} from "@ionic-native/in-app-browser";
 
 @NgModule({
   declarations: [
@@ -26,11 +28,13 @@ import {SuccessPageModule} from '../pages/success/success.module';
     TabsPage,
     TalksComponent,
     SuccessPage
+
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    IonicStorageModule.forRoot()
 
   ],
   bootstrap: [IonicApp],
@@ -46,7 +50,10 @@ import {SuccessPageModule} from '../pages/success/success.module';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    TalksProvider
+    TalksProvider,
+    TalksComponent,
+
+
   ]
 })
 export class AppModule {

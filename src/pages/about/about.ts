@@ -10,17 +10,22 @@ import {SuccessPage} from "../success/success";
 })
 export class AboutPage {
 
-  constructor(public navCtrl: NavController, public talks1: TalksProvider, public talks2: TalksComponent) {
+  constructor(public navCtrl: NavController, private talksProvider: TalksProvider, private talksComponent: TalksComponent) {
 
   }
+
 
   onSubmit(title, date) {
-    this.talks1.save(title, date)
-      .subscribe(x => {
+    this.talksProvider.save(title, date).subscribe(x => {
+      // COMPROBAMOS EL RESULTADO Y VERIFICAMOS
+      console.log(x)
+      // pasamos al navegador una referencia a la página
+      this.navCtrl.push(SuccessPage, {talk: title, date})
 
-        console.log(x)
-        this.navCtrl.push(SuccessPage, {talk: {title, date}})
-      });
+    });
+
+
   }
+
 
 }
